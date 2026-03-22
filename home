@@ -1,0 +1,184 @@
+<!DOCTYPE html>
+<html lang="vi">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Trang Web Cơ Bản</title>
+    <!-- Tích hợp Tailwind CSS để tạo kiểu nhanh chóng -->
+    <script src="https://cdn.tailwindcss.com"></script>
+    <!-- Sử dụng thư viện icon Lucide -->
+    <script src="https://unpkg.com/lucide@latest"></script>
+    <style>
+        /* CSS tùy chỉnh cho hiệu ứng cuộn mượt mà */
+        html {
+            scroll-behavior: smooth;
+        }
+    </style>
+</head>
+<body class="bg-gray-50 text-gray-800 font-sans antialiased flex flex-col min-h-screen">
+
+    <!-- Thanh Điều Hướng (Navbar) -->
+    <nav class="bg-white shadow-md fixed w-full z-10 top-0">
+        <div class="max-w-6xl mx-auto px-4">
+            <div class="flex justify-between items-center h-16">
+                <!-- Logo -->
+                <div class="flex-shrink-0 flex items-center">
+                    <a href="#" class="text-2xl font-bold text-blue-600 flex items-center gap-2">
+                        <i data-lucide="layout"></i>
+                        WebCơBản
+                    </a>
+                </div>
+                
+                <!-- Menu Desktop -->
+                <div class="hidden md:flex space-x-8">
+                    <a href="#trang-chu" class="text-gray-600 hover:text-blue-600 transition duration-300">Trang Chủ</a>
+                    <a href="#gioi-thieu" class="text-gray-600 hover:text-blue-600 transition duration-300">Giới Thiệu</a>
+                    <a href="#tinh-nang" class="text-gray-600 hover:text-blue-600 transition duration-300">Tính Năng</a>
+                    <a href="#lien-he" class="text-gray-600 hover:text-blue-600 transition duration-300">Liên Hệ</a>
+                </div>
+
+                <!-- Nút Hamburger cho Mobile -->
+                <div class="md:hidden flex items-center">
+                    <button id="mobile-menu-btn" class="text-gray-600 hover:text-blue-600 focus:outline-none">
+                        <i data-lucide="menu"></i>
+                    </button>
+                </div>
+            </div>
+        </div>
+
+        <!-- Menu Mobile (Ẩn mặc định) -->
+        <div id="mobile-menu" class="hidden md:hidden bg-white border-t border-gray-200">
+            <a href="#trang-chu" class="block px-4 py-3 text-gray-600 hover:bg-gray-50 hover:text-blue-600">Trang Chủ</a>
+            <a href="#gioi-thieu" class="block px-4 py-3 text-gray-600 hover:bg-gray-50 hover:text-blue-600">Giới Thiệu</a>
+            <a href="#tinh-nang" class="block px-4 py-3 text-gray-600 hover:bg-gray-50 hover:text-blue-600">Tính Năng</a>
+            <a href="#lien-he" class="block px-4 py-3 text-gray-600 hover:bg-gray-50 hover:text-blue-600">Liên Hệ</a>
+        </div>
+    </nav>
+
+    <!-- Nội dung chính đẩy xuống để không bị che bởi navbar cố định -->
+    <main class="flex-grow pt-16">
+        
+        <!-- Phần Hero (Giới thiệu chính) -->
+        <section id="trang-chu" class="bg-blue-50 py-20 lg:py-32">
+            <div class="max-w-6xl mx-auto px-4 text-center">
+                <h1 class="text-4xl md:text-5xl lg:text-6xl font-extrabold text-gray-900 mb-6">
+                    Chào mừng đến với <span class="text-blue-600">Website của tôi</span>
+                </h1>
+                <p class="text-lg md:text-xl text-gray-600 mb-10 max-w-2xl mx-auto">
+                    Đây là một trang web mẫu cơ bản được xây dựng bằng HTML5, Tailwind CSS và JavaScript. Nó có thiết kế hiện đại và tương thích với mọi kích thước màn hình.
+                </p>
+                <div class="flex justify-center gap-4">
+                    <a href="#tinh-nang" class="bg-blue-600 hover:bg-blue-700 text-white font-semibold py-3 px-8 rounded-full shadow-lg transition duration-300">
+                        Khám phá ngay
+                    </a>
+                    <button id="demo-btn" class="bg-white hover:bg-gray-50 text-blue-600 border border-blue-600 font-semibold py-3 px-8 rounded-full shadow transition duration-300">
+                        Click thử nhé
+                    </button>
+                </div>
+                <!-- Hộp thông báo cho nút (thay thế cho alert) -->
+                <div id="demo-message" class="hidden mt-6 p-4 bg-green-100 text-green-700 rounded-lg max-w-md mx-auto shadow">
+                    Tuyệt vời! Bạn vừa click vào nút. JavaScript đang hoạt động rất tốt!
+                </div>
+            </div>
+        </section>
+
+        <!-- Phần Tính năng -->
+        <section id="tinh-nang" class="py-20 bg-white">
+            <div class="max-w-6xl mx-auto px-4">
+                <div class="text-center mb-16">
+                    <h2 class="text-3xl font-bold text-gray-900">Tính năng nổi bật</h2>
+                    <p class="mt-4 text-gray-600">Những điểm mạnh của việc xây dựng web với công nghệ hiện đại</p>
+                </div>
+
+                <div class="grid grid-cols-1 md:grid-cols-3 gap-8">
+                    <!-- Thẻ tính năng 1 -->
+                    <div class="p-6 bg-gray-50 rounded-xl shadow-sm hover:shadow-md transition duration-300 border border-gray-100 text-center">
+                        <div class="w-14 h-14 bg-blue-100 text-blue-600 rounded-full flex items-center justify-center mx-auto mb-4">
+                            <i data-lucide="smartphone"></i>
+                        </div>
+                        <h3 class="text-xl font-semibold mb-2 text-gray-800">Thiết kế Đáp ứng</h3>
+                        <p class="text-gray-600">Hiển thị hoàn hảo trên mọi thiết bị, từ điện thoại di động, máy tính bảng đến màn hình máy tính lớn.</p>
+                    </div>
+
+                    <!-- Thẻ tính năng 2 -->
+                    <div class="p-6 bg-gray-50 rounded-xl shadow-sm hover:shadow-md transition duration-300 border border-gray-100 text-center">
+                        <div class="w-14 h-14 bg-green-100 text-green-600 rounded-full flex items-center justify-center mx-auto mb-4">
+                            <i data-lucide="zap"></i>
+                        </div>
+                        <h3 class="text-xl font-semibold mb-2 text-gray-800">Tốc độ Nhanh</h3>
+                        <p class="text-gray-600">Tối ưu hóa mã nguồn và sử dụng CDN giúp trang web tải cực nhanh, nâng cao trải nghiệm người dùng.</p>
+                    </div>
+
+                    <!-- Thẻ tính năng 3 -->
+                    <div class="p-6 bg-gray-50 rounded-xl shadow-sm hover:shadow-md transition duration-300 border border-gray-100 text-center">
+                        <div class="w-14 h-14 bg-purple-100 text-purple-600 rounded-full flex items-center justify-center mx-auto mb-4">
+                            <i data-lucide="code"></i>
+                        </div>
+                        <h3 class="text-xl font-semibold mb-2 text-gray-800">Dễ Tùy Chỉnh</h3>
+                        <p class="text-gray-600">Mã nguồn được viết rõ ràng, rành mạch giúp bạn dễ dàng thay đổi màu sắc, bố cục và nội dung theo ý muốn.</p>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+    </main>
+
+    <!-- Chân trang (Footer) -->
+    <footer id="lien-he" class="bg-gray-900 text-gray-300 py-10 mt-auto">
+        <div class="max-w-6xl mx-auto px-4 text-center md:text-left flex flex-col md:flex-row justify-between items-center">
+            <div class="mb-4 md:mb-0">
+                <a href="#" class="text-2xl font-bold text-white flex items-center justify-center md:justify-start gap-2 mb-2">
+                    <i data-lucide="layout"></i>
+                    WebCơBản
+                </a>
+                <p class="text-sm">Xây dựng tương lai trên nền tảng Web.</p>
+            </div>
+            
+            <div class="flex space-x-6">
+                <a href="#" class="hover:text-white transition"><i data-lucide="facebook"></i></a>
+                <a href="#" class="hover:text-white transition"><i data-lucide="twitter"></i></a>
+                <a href="#" class="hover:text-white transition"><i data-lucide="github"></i></a>
+            </div>
+        </div>
+        <div class="text-center mt-8 text-sm text-gray-500 border-t border-gray-800 pt-6">
+            &copy; 2026 Bản quyền thuộc về WebCơBản. All rights reserved.
+        </div>
+    </footer>
+
+    <!-- Xử lý JavaScript cơ bản -->
+    <script>
+        // Khởi tạo các biểu tượng Lucide
+        lucide.createIcons();
+
+        // Xử lý menu trên điện thoại di động
+        const btn = document.getElementById('mobile-menu-btn');
+        const menu = document.getElementById('mobile-menu');
+
+        btn.addEventListener('click', () => {
+            menu.classList.toggle('hidden');
+        });
+
+        // Đóng menu mobile khi click vào một liên kết
+        const mobileLinks = menu.querySelectorAll('a');
+        mobileLinks.forEach(link => {
+            link.addEventListener('click', () => {
+                menu.classList.add('hidden');
+            });
+        });
+
+        // Xử lý nút "Click thử nhé"
+        const demoBtn = document.getElementById('demo-btn');
+        const demoMessage = document.getElementById('demo-message');
+
+        demoBtn.addEventListener('click', () => {
+            // Hiển thị thông báo
+            demoMessage.classList.remove('hidden');
+            
+            // Tự động ẩn sau 3 giây
+            setTimeout(() => {
+                demoMessage.classList.add('hidden');
+            }, 3000);
+        });
+    </script>
+</body>
+</html>
