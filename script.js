@@ -1,7 +1,14 @@
-// Lấy thẻ button thông qua ID
-const button = document.getElementById("myButton");
+let currentWidth = 800;
 
-// Thêm sự kiện click cho button
-button.addEventListener("click", function() {
-    alert("Cảm ơn bạn đã ghé thăm trang web của tôi! Chúc bạn một ngày tốt lành.");
-});
+function changeZoom(amount) {
+    const images = document.querySelectorAll('.pages-container img');
+    currentWidth += amount;
+    
+    // Limits
+    if (currentWidth < 400) currentWidth = 400;
+    if (currentWidth > 1200) currentWidth = 1200;
+
+    images.forEach(img => {
+        img.style.maxWidth = currentWidth + 'px';
+    });
+}
