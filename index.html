@@ -1,21 +1,51 @@
 <!DOCTYPE html>
-<html lang="vi">
+<html lang="en">
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>MoonlightPeach</title>
+    <title>MangaScan | Translation Hub</title>
     <link rel="stylesheet" href="style.css">
 </head>
 <body>
-    <div class="container">
-        <h1>Đào hồng dưới trăng</h1>
-        <p>Blog cá nhân đu tác phẩm của EN nói chung và Dkn nói riêng</p>
-        
-        <div class="card">
-            <h2>Về tôi</h2>
-            <p>Tôi là một người yêu thích lập trình và công nghệ. Đây là dự án web đầu tiên của tôi trên GitHub.</p>
-            <button id="myButton">Nhấn vào đây để xem điều bất ngờ!</button>
-        </div>
+
+    <header class="navbar">
+        <div class="logo">Manga<span>Scan</span></div>
+        <nav>
+            <a href="#">Directory</a>
+            <a href="#">Discord</a>
+            <a href="#">Donate</a>
+        </nav>
+    </header>
+
+    <div class="main-container">
+        <aside class="sidebar">
+            <h3>Chapters</h3>
+            <ul id="chapter-list">
+                <li class="active">Chapter 01: The Beginning</li>
+                <li>Chapter 02: New Friends</li>
+                <li>Chapter 03: The Awakening</li>
+            </ul>
+        </aside>
+
+        <main class="viewer">
+            <div class="viewer-header">
+                <h2>Project Name: Chapter 01</h2>
+                <div class="controls">
+                    <button onclick="changeZoom(-10)">-</button>
+                    <button onclick="changeZoom(10)">+</button>
+                </div>
+            </div>
+
+            <div class="pages-container" id="manga-pages">
+                <img src="https://via.placeholder.com/800x1200?text=Page+1" alt="Page 1">
+                <img src="https://via.placeholder.com/800x1200?text=Page+2" alt="Page 2">
+                <img src="https://via.placeholder.com/800x1200?text=Page+3" alt="Page 3">
+            </div>
+            
+            <div class="viewer-footer">
+                <button>Next Chapter &rarr;</button>
+            </div>
+        </main>
     </div>
 
     <script src="script.js"></script>
